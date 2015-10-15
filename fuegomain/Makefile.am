@@ -20,7 +20,8 @@ fuego_LDADD = \
 $(BOOST_PROGRAM_OPTIONS_LIB) \
 $(BOOST_FILESYSTEM_LIB) \
 $(BOOST_SYSTEM_LIB) \
-$(BOOST_THREAD_LIB)
+$(BOOST_THREAD_LIB) \
+$(PTHREAD_CFLAGS)
 
 fuego_DEPENDENCIES = \
 ../gouct/libfuego_gouct.a \
@@ -32,6 +33,7 @@ fuego_DEPENDENCIES = \
 fuego_CPPFLAGS = \
 -DDATADIR='"@datadir@"' \
 -DABS_TOP_SRCDIR='"@abs_top_srcdir@"' \
+$(PTHREAD_CFLAGS) \
 $(BOOST_CPPFLAGS) \
 -I@top_srcdir@/gtpengine \
 -I@top_srcdir@/smartgame \
